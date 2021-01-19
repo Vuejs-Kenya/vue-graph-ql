@@ -19,8 +19,31 @@
 </template>
 
 <script>
+  import gql from 'graphql-tag'
+
+  const ALL_POSTS = gql `query
+  feed {
+    id
+    title
+    content
+    published
+  } `
+
   export default {
-    name: 'app'
+    name: 'app',
+    data: function () {
+      return {
+        posts: []
+      }
+    },
+    methods: {
+      createPost() {
+
+      }
+    },
+    apollo: {
+      posts: ALL_POSTS
+    }
   }
 </script>
 
