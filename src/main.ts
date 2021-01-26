@@ -8,6 +8,9 @@ import ApolloClient from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import VueApollo from "vue-apollo";
 
+import store from "./store"
+import router from "@/router";
+
 import messages from "@/locale";
 
 Vue.prototype.$appName = "Vue GraphQL";
@@ -38,8 +41,11 @@ const apolloProvider = new VueApollo({
 
 Vue.use(VueApollo);
 Vue.use(BootstrapVue)
+
 new Vue({
     el: '#app',
+    router,
+    store,
     i18n,
     apolloProvider,
     render: h => h(App)
