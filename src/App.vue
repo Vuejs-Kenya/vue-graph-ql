@@ -1,24 +1,28 @@
 <template>
-
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <ApolloExample msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
-import Vue from 'vue';
-import Component from 'vue-class-component';
-import Header from '@/components/layouts/Header.vue';
-import Footer from '@/components/layouts/Footer.vue';
+import ApolloExample from './components/ApolloExample.vue'
 
-@Component({
+export default {
+  name: 'App',
   components: {
-    Header,
-    Footer
+    ApolloExample
   }
-})
-export default class App extends Vue {
-
 }
 </script>
 
-<style scoped>
-
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>
